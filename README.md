@@ -37,24 +37,6 @@ Territories and dependencies — Greenland, Puerto Rico, Hong Kong, Taiwan — a
 the map and can be filled in, because they are real places you can have been to.
 They are counted on their own line, so the big number keeps meaning what it says.
 
-## Scripting
-
-```sh
-omarchy-shell io.github.ejuro.omamap visited        # SWE NOR GRL ...
-omarchy-shell io.github.ejuro.omamap mark SWE
-omarchy-shell io.github.ejuro.omamap unmark SWE
-omarchy-shell io.github.ejuro.omamap clear
-omarchy-shell io.github.ejuro.omamap color          # #D2689C, or empty for "the theme"
-omarchy-shell io.github.ejuro.omamap setColor '#D2689C'
-omarchy-shell io.github.ejuro.omamap toggle         # the panel, not a country
-```
-
-Which means you can import a list you already keep somewhere:
-
-```sh
-for c in SWE NOR DNK FIN ISL; do omarchy-shell io.github.ejuro.omamap mark $c; done
-```
-
 ## State
 
 ```
