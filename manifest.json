@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "io.github.ejuro.omamap",
+  "name": "Omamap",
+  "version": "1.1.0",
+  "author": "ejuro",
+  "license": "MIT",
+  "description": "A world map in your bar. Click the countries you have been to and watch the number climb.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "activation": "on-demand",
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Omamap",
+    "description": "Track which of the world's 195 countries you have visited on a zoomable world map.",
+    "category": "Fun",
+    "aliases": [
+      "omamap",
+      "map",
+      "world",
+      "countries",
+      "travel",
+      "visited",
+      "globe",
+      "atlas"
+    ],
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "barLabel": "icon"
+    },
+    "schema": [
+      {
+        "key": "barLabel",
+        "type": "enum",
+        "label": "Bar label",
+        "description": "What the bar shows next to the globe.",
+        "defaultValue": "icon",
+        "options": ["icon", "count", "percent"]
+      }
+    ]
+  }
+}
