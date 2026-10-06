@@ -8,7 +8,7 @@ it fills in; the number above the map goes up. Click it again and it does not.
 ## Install
 
 ```sh
-omarchy plugin add https://github.com/ejuro/omamap.git --enable
+omarchy plugin add https://github.com/erikrjohansson/omamap.git --enable
 ```
 
 ## Use
