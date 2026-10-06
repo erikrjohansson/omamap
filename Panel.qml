@@ -177,8 +177,10 @@ Panel {
   function close() {
     root.pickerOpen = false
     root.resetConfirmOpen = false
-    setCenterHoverRevealSuppressed(false)
+    // Hide first: PluginBarApi exposes centerHoverRevealSuppressed as readonly,
+    // so a bad suppress write must not strand the fullscreen overlay.
     root.controller.hide()
+    setCenterHoverRevealSuppressed(false)
   }
 
   function toggle() {
@@ -194,8 +196,12 @@ Panel {
 
   // Summoning by hotkey moves no pointer, so a hover the bar was still holding
   // must not keep the center indicators revealed behind the panel.
+  // Third-party widgets get PluginBarApi: the flag is readonly there, so prefer
+  // the setter (same pattern as the clock/weather panels).
   function setCenterHoverRevealSuppressed(value) {
-    if (root.bar && "centerHoverRevealSuppressed" in root.bar)
+    if (root.bar && typeof root.bar.setCenterHoverRevealSuppressed === "function")
+      root.bar.setCenterHoverRevealSuppressed(value)
+    else if (root.bar && "centerHoverRevealSuppressed" in root.bar)
       root.bar.centerHoverRevealSuppressed = value
   }
 
