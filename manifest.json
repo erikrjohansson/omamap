@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "io.github.ejuro.omamap",
   "name": "Omamap",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "erikrjohansson",
   "license": "MIT",
   "description": "A world map in your bar. Click the countries you have been to and watch the number climb.",
